@@ -55,7 +55,7 @@ import 'package:bouncing_character/bouncing_character.dart';
         onHoverTranslate: customTransform,
     )
 ```
-###Example 
+##Example 
 **main.dart**
 ```dart
 import 'package:bouncing_character_example/home_page.dart';
