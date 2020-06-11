@@ -1,8 +1,8 @@
 name: bouncing_character
-description: .
+description: Helps you to make elegant illustation of bouncing charater on flutter web .
 version: 0.0.1
-author:
-homepage:
+author: Abhishek Kumar iamabhishek229313@gmail.com
+homepage: https://github.com/iamabhishek229313/bouncing_character
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
