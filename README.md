@@ -128,7 +128,7 @@ class _HomePageState extends State<HomePage> {
 ```
 |                                                     To give you an idea ...                                                      |
 |:----------------------------------------------------------------------------------------------------------------------:|
-| ![](https://github.com/iamabhishek229313/bouncing_character/blob/master/illustration/illustration_gif.gif?raw=true) 
+![](https://github.com/iamabhishek229313/bouncing_character/blob/master/illustration/illustration_gif.gif?raw=true) 
 
 ## Created and Maintained by. 
 [Abhishek Kumar](https://github.com/iamabhishek229313) 
