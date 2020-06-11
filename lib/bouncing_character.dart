@@ -8,7 +8,7 @@ class BouncingCharacter extends StatefulWidget {
   final Duration duration ;
   final Matrix4 onHoverTranslate ;
   final WrapAlignment wrapAlignment ;
-  const BouncingCharacter({Key key,@required this.text , @required this.duration , this.style , this.onHoverTranslate , this.wrapAlignment}) : assert(
+  const BouncingCharacter({Key key,@required this.text , @required this.duration , this.style , this.onHoverTranslate, this.wrapAlignment}) : assert(
   text != null && duration != null
   ) ;
 
@@ -26,6 +26,8 @@ class _BouncingCharacterState extends State<BouncingCharacter> {
         children: words.map((e) => EachString(
           text: e,
           style: widget.style,
+          duration: widget.duration,
+          onHoverTranslate: widget.onHoverTranslate,
         ))
             .toList());
   }
@@ -35,7 +37,8 @@ class EachString extends StatefulWidget {
   String text;
   final TextStyle style ;
   final Duration duration ;
-  EachString({Key key, @required this.text ,@required this.style ,@required this.duration}) : super(key: key);
+  final Matrix4 onHoverTranslate ;
+  EachString({Key key, @required this.text ,@required this.style ,@required this.duration,@required this.onHoverTranslate}) : super(key: key);
 
   @override
   _EachStringState createState() => _EachStringState();
@@ -51,6 +54,7 @@ class _EachStringState extends State<EachString> {
           widget.text.length,
               (index) => TransalteContainer(
             duration: widget.duration,
+            onHoverTranslate: widget.onHoverTranslate,
             child: Text(
               widget.text[index],
               style: widget.style == null ? null : widget.style,
@@ -63,20 +67,21 @@ class _EachStringState extends State<EachString> {
 class TransalteContainer extends StatefulWidget {
   final Widget child;
   final Duration duration ;
-  const TransalteContainer({Key key, @required this.child ,@required this.duration}) : super(key: key);
+  final Matrix4 onHoverTranslate ;
+  const TransalteContainer({Key key, @required this.child ,@required this.duration,this.onHoverTranslate}) : super(key: key);
 
   @override
   _TransalteContainerState createState() => _TransalteContainerState();
 }
 
 class _TransalteContainerState extends State<TransalteContainer> {
-  final onHoverTranslate = Matrix4.identity()..translate(0, -10, 0);
-  final onNonHoverTranslate = Matrix4.identity()..translate(0, 0, 0);
 
   bool _hovering = false;
 
   @override
   Widget build(BuildContext context) {
+    final onHoverTranslate = widget.onHoverTranslate == null ? (Matrix4.identity()..translate(0, -10, 0)) : widget.onHoverTranslate;
+    final onNonHoverTranslate = Matrix4.identity()..translate(0, 0, 0);
     return MouseRegion(
         onEnter: (e) => _mouseEnter(true),
         onExit: (e) => _mouseEnter(false),
