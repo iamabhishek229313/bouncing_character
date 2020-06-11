@@ -1,4 +1,4 @@
-library "bouncing_character" ;
+library bouncing_character ;
 
 import 'package:flutter/material.dart';
 

@@ -2,7 +2,7 @@
 # bouncing_character
 [![pub package](https://img.shields.io/pub/v/bouncing_character.svg)](https://pub.dartlang.org/packages/bouncing_character)
 
-**A flutter plugin to make elegant illustation of bouncing charater on flutter web**
+**A flutter plugin to make elegant illustration of bouncing character on flutter web**
 
 
 [README](https://github.com/iamabhishek229313/bouncing_character/blob/master/README.md)
@@ -106,7 +106,7 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: BgColor,
         body: Center(
             child: BouncingCharacter(
-              text: "I'm a developer",
+              text: "I'm an developer",
               duration: customDuration,
               style: customStyle,
               onHoverTranslate: customTransform,
