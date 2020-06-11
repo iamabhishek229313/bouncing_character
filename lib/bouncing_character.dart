@@ -7,7 +7,8 @@ class BouncingCharacter extends StatefulWidget {
   final TextStyle style ;
   final Duration duration ;
   final Matrix4 onHoverTranslate ;
-  const BouncingCharacter({Key key,@required this.text , @required this.duration , this.style , this.onHoverTranslate}) : assert(
+  final WrapAlignment wrapAlignment ;
+  const BouncingCharacter({Key key,@required this.text , @required this.duration , this.style , this.onHoverTranslate , this.wrapAlignment}) : assert(
   text != null && duration != null
   ) ;
 
@@ -21,7 +22,7 @@ class _BouncingCharacterState extends State<BouncingCharacter> {
     List<String> words = widget.text.split(' ') ;
     print(words) ;
     return Wrap(
-        runAlignment: WrapAlignment.center,
+        runAlignment: widget.wrapAlignment == null ?  WrapAlignment.center : widget.wrapAlignment,
         children: words.map((e) => EachString(
           text: e,
           style: widget.style,
