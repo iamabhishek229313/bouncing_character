@@ -27,18 +27,6 @@ dependencies:
 ```
 import 'package:bouncing_character/bouncing_character.dart';
 ```
-
-### Property
-   
-|Property|Type|Default Value|Description|
-|:---|:---|:---|:---| 
-|text|String|**@required**|The whole text that you want to get illustration|
-|duration|Duration|**@required**|Animation Duration|
-|style|TextStyle|**null**|Text style that you want to be there.|
-|onHoverTranslate|Matrix4|Matrix4.identity()..translate(0,-10,0)|Transformation of animation|
-
-
-
 ### API
 **Too simple example**
 ```dart
